@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">{% block title %} Blogs {% endblock %}</h1>
+    <div class="content">
+        {% for blog in blogs %}
+            <div class="student">
+                <p><b>#{{ blog.id }}</b></p>
+                <b>
+                    <p class="name">{{ blog.title }}</p>
+                </b>
+                <p>{{ blog.content }} years old.</p>
+                <p>Joined: {{ blog.created_at }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
